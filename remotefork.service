@@ -1,0 +1,15 @@
+[Unit]
+Description = RemoteForkCP
+After = network-online.target syslog.target local-fs.target
+Wants = network-online.target
+
+[Service]
+Type=simple
+User=remotefork
+ExecStart = /remotefork/RemoteForkCP
+WorkingDirectory = /remotefork
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy = multi-user.target
