@@ -1,7 +1,4 @@
 RemoteFork
-=========================
-
-Debian based docker image for logo-text-test (v3.1.31)® https://web.telegram.org/#/im?p=@AceStreamMOD.
 
 Установка
 docker run 
