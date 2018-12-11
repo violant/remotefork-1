@@ -23,9 +23,21 @@ RUN apt-get update -y && \
    mv linux-x64 app && \
    rm -rf /app/wwwroot && \
    mv app/* /app && \
-   wget -o - https://github.com/ShutovPS/RemoteFork.Plugins/releases/download/hdrezka.0.0.8/RemoteFork.Plugins.HDRezka.dll && \
+   wget -o - https://github.com/ShutovPS/RemoteFork.Plugins/releases/download/moonwalk.0.0.7/RemoteFork.Plugins.Moonwalk.dll && \
+   wget -o - https://github.com/ShutovPS/RemoteFork.Plugins/releases/download/hdrezka.0.0.10/RemoteFork.Plugins.HDRezka.dll && \
+   wget -o - https://github.com/ShutovPS/RemoteFork.Plugins/releases/download/filmix.0.0.1/RemoteFork.Plugins.Filmix.dll && \
    wget -o - https://github.com/ShutovPS/RemoteFork.Plugins/releases/download/kinosha.0.0.2/RemoteFork.Plugins.Kinosha.dll && \
-   wget -o - https://github.com/ShutovPS/RemoteFork.Plugins/releases/download/moonwalk.0.0.5/RemoteFork.Plugins.Moonwalk.dll && \
+   wget -o - https://github.com/ShutovPS/RemoteFork.Plugins/releases/download/sensfilm.0.0.3/RemoteFork.Plugins.SensFilm.dll && \
+   wget -o - https://github.com/ShutovPS/RemoteFork.Plugins/releases/download/hdserials.0.0.4/RemoteFork.Plugins.HDSerials.dll && \
+   wget -o - https://github.com/ShutovPS/RemoteFork.Plugins/releases/download/seasonvar.0.4.8/RemoteFork.Plugins.Seasonvar.dll && \
+   wget -o - https://github.com/ShutovPS/RemoteFork.Plugins/releases/download/youtube.0.1.1/RemoteFork.Plugins.YouTube.dll && \
+   wget -o - https://github.com/ShutovPS/RemoteFork.Plugins/releases/download/thvp.0.1.1/RemoteFork.Plugins.Thvp.dll && \
+   wget -o - https://github.com/ShutovPS/RemoteFork.Plugins/releases/download/acestreamtv.0.1.3/RemoteFork.Plugins.AceStream.AceStreamTV.dll && \
+   wget -o - https://github.com/ShutovPS/RemoteFork.Plugins/releases/download/godzfilm.0.0.1/RemoteFork.Plugins.GodZfilm.dll && \
+   wget -o - https://github.com/ShutovPS/RemoteFork.Plugins/releases/download/rutracker.0.1.3/RemoteFork.Plugins.AceStream.Rutracker.dll && \
+   wget -o - https://github.com/ShutovPS/RemoteFork.Plugins/releases/download/nnmclub.0.1.3/RemoteFork.Plugins.AceStream.NnmClub.dll && \
+   wget -o - https://github.com/ShutovPS/RemoteFork.Plugins/releases/download/rutor.0.1.0/RemoteFork.Plugins.AceStream.Rutor.dll && \
+   wget -o - https://github.com/ShutovPS/RemoteFork.Plugins/releases/download/stereotracker.0.1.0/RemoteFork.Plugins.AceStream.StereoTracker.dll && \
    mv *.dll /app/Plugins && \
    wget -o - https://www.dropbox.com/s/wde2cc3hma9f94f/acestream_3.1.33_x86_webUI.tar.gz && \
    tar -zxvf acestream_3.1.33_x86_webUI.tar.gz && \
