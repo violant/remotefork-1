@@ -18,7 +18,7 @@ RUN apt-get update -y && \
     wget && \
     
 # install acestream-engine
-   wget -o - https://github.com/ShutovPS/RemoteFork/releases/download/v1.40.0.12/linux-x64.zip && \
+   wget -o - https://www.dropbox.com/s/wde2cc3hma9f94f/acestream_3.1.33_x86_webUI.tar.gz && \
    unzip linux-x64.zip && \
    mv linux-x64 app && \
    rm -rf /app/wwwroot && \
