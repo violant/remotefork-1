@@ -10,7 +10,7 @@ docker run
 --net=host 
 --name=ace86 
 -e TZ=Europe/Helsinki
-sybdata/remotefork bash -c "/usr/bin/start.sh your_server_ip 600"
+sybdata/remotefork bash -c "/usr/bin/start.sh your_server_ip 1000"
 
 где:
 your_server_ip - адрес машины на которую ставится этот контейнер
