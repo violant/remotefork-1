@@ -18,7 +18,7 @@ RUN apt-get update -y && \
     wget && \
     
 # install acestream-engine
-   wget -o - https://www.dropbox.com/s/wde2cc3hma9f94f/acestream_3.1.33_x86_webUI.tar.gz && \
+   wget -o - https://github.com/ShutovPS/RemoteFork/releases/download/v1.40.0.12/linux-x64.zip && \
    unzip linux-x64.zip && \
    mv linux-x64 app && \
    rm -rf /app/wwwroot && \
@@ -27,7 +27,7 @@ RUN apt-get update -y && \
    wget -o - https://github.com/ShutovPS/RemoteFork.Plugins/releases/download/kinosha.0.0.2/RemoteFork.Plugins.Kinosha.dll && \
    wget -o - https://github.com/ShutovPS/RemoteFork.Plugins/releases/download/moonwalk.0.0.5/RemoteFork.Plugins.Moonwalk.dll && \
    mv *.dll /app/Plugins && \
-   wget -o - https://sybdata.de/files/public-docs/acestream_3.1.33_x86_webUI.tar.gz && \
+   wget -o - https://www.dropbox.com/s/wde2cc3hma9f94f/acestream_3.1.33_x86_webUI.tar.gz && \
    tar -zxvf acestream_3.1.33_x86_webUI.tar.gz && \
    mv acestream.engine/ /opt/ && \
    find /opt/acestream.engine/androidfs/system -type d -exec chmod 755 {} \; && \
