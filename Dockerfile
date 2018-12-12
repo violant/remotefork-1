@@ -17,11 +17,11 @@ RUN apt-get update -y && \
     mc \
     wget && \
     
-# install acestream-engine
+# install remotefork
    wget -o - https://github.com/ShutovPS/RemoteFork/releases/download/v1.40.0.12/linux-x64.zip && \
    unzip linux-x64.zip && \
    mv linux-x64 app && \
-   rm -rf /app/wwwroot && \
+   rm -rf /app/ && \
    mv app/* /app && \
    wget -o - https://github.com/ShutovPS/RemoteFork.Plugins/releases/download/moonwalk.0.0.7/RemoteFork.Plugins.Moonwalk.dll && \
    wget -o - https://github.com/ShutovPS/RemoteFork.Plugins/releases/download/hdrezka.0.0.10/RemoteFork.Plugins.HDRezka.dll && \
@@ -39,6 +39,8 @@ RUN apt-get update -y && \
    wget -o - https://github.com/ShutovPS/RemoteFork.Plugins/releases/download/rutor.0.1.0/RemoteFork.Plugins.AceStream.Rutor.dll && \
    wget -o - https://github.com/ShutovPS/RemoteFork.Plugins/releases/download/stereotracker.0.1.0/RemoteFork.Plugins.AceStream.StereoTracker.dll && \
    mv *.dll /app/Plugins && \
+   
+ # install acestream
    wget -o - https://www.dropbox.com/s/wde2cc3hma9f94f/acestream_3.1.33_x86_webUI.tar.gz && \
    tar -zxvf acestream_3.1.33_x86_webUI.tar.gz && \
    mv acestream.engine/ /opt/ && \
