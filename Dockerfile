@@ -38,7 +38,7 @@ RUN apt-get update -y && \
    wget -o - https://github.com/ShutovPS/RemoteFork.Plugins/releases/download/stereotracker.0.1.0/RemoteFork.Plugins.AceStream.StereoTracker.dll && \
    mv *.dll /app/linux-x64/Plugins && \
    
-#acestream
+# acestream
   mkdir -p /opt/acestream.engine/ && \
   wget -o - https://www.dropbox.com/s/wde2cc3hma9f94f/acestream_3.1.33_x86_webUI.tar.gz && \
   tar -zxvf acestream_3.1.33_x86_webUI.tar.gz && \
