@@ -40,7 +40,7 @@ RUN apt-get update -y && \
    
 #acestream
   mkdir -p /opt/acestream.engine/ && \
-  wget -o - https://sybdata.de/data/acestream/acestream_3.1.33_x86_webUI.tar.gz && \
+  wget -o - https://www.dropbox.com/s/wde2cc3hma9f94f/acestream_3.1.33_x86_webUI.tar.gz && \
   tar -zxvf acestream_3.1.33_x86_webUI.tar.gz && \
   mv acestream.engine/ /opt/ && \
   find /opt/acestream.engine/androidfs/system -type d -exec chmod 755 {} \; && \
