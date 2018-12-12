@@ -18,7 +18,7 @@ RUN apt-get update -y && \
     wget && \
     
 # install remoteforkcp
- wget -o - https://github.com/ShutovPS/RemoteFork/releases/download/v1.40.0.11/linux-x64.zip -O RemoteFork.zip && \
+ wget -o - https://github.com/ShutovPS/RemoteFork/releases/download/v1.40.0.12/linux-x64.zip -O RemoteFork.zip && \
  unzip RemoteFork.zip -d /app && \
  mkdir -p /app/linux-x64/Plugins && \
  wget -o - https://github.com/ShutovPS/RemoteFork.Plugins/releases/download/acestreamtv.0.1.3/RemoteFork.Plugins.AceStream.AceStreamTV.dll && \
