@@ -52,9 +52,9 @@ dnf clean packages && \
 # cleanup
  rm -rf \
 	/tmp/* \
-	aceproxy.zip \
 	acestream_3.1.33_x86_webUI.tar.gz \ 
     RemoteFork.zip
+	
 
 # add local files
 ADD acestream.start /opt/acestream.engine/acestream.start
