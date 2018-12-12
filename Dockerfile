@@ -52,6 +52,7 @@ ADD acestream.conf /opt/acestream.engine/androidfs/acestream.engine/acestream.co
 ADD start.sh /usr/bin/start.sh
 RUN chmod +x /usr/bin/start.sh
 
-EXPOSE 8621 62062 6878 8027 9955
+# ports and volumes
+EXPOSE 8000 9955 6878 8621 62062 8027
 
 WORKDIR /
