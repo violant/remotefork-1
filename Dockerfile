@@ -19,10 +19,8 @@ RUN apt-get update -y && \
     
 # install remotefork
    wget -o - https://github.com/ShutovPS/RemoteFork/releases/download/v1.40.0.12/linux-x64.zip && \
-   unzip linux-x64.zip && \
-   mv linux-x64 app && \
-   rm -rf /app/ && \
-   mv app/* /app && \
+   unzip RemoteFork.zip -d /app && \
+   mkdir -p /app/linux-x64/Plugins && \
    wget -o - https://github.com/ShutovPS/RemoteFork.Plugins/releases/download/moonwalk.0.0.7/RemoteFork.Plugins.Moonwalk.dll && \
    wget -o - https://github.com/ShutovPS/RemoteFork.Plugins/releases/download/hdrezka.0.0.10/RemoteFork.Plugins.HDRezka.dll && \
    wget -o - https://github.com/ShutovPS/RemoteFork.Plugins/releases/download/filmix.0.0.1/RemoteFork.Plugins.Filmix.dll && \
