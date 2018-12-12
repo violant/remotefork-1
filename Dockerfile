@@ -39,17 +39,17 @@ RUN apt-get update -y && \
    mv *.dll /app/linux-x64/Plugins && \
    
 # acestream
-  mkdir -p /opt/acestream.engine/ && \
-  wget -o - https://www.dropbox.com/s/wde2cc3hma9f94f/acestream_3.1.33_x86_webUI.tar.gz && \
-  tar -zxvf acestream_3.1.33_x86_webUI.tar.gz && \
-  mv acestream.engine/ /opt/ && \
-  find /opt/acestream.engine/androidfs/system -type d -exec chmod 755 {} \; && \
-  find /opt/acestream.engine/androidfs/system -type f -exec chmod 644 {} \; && \
-  chmod 755 /opt/acestream.engine/androidfs/system/bin/* /opt/acestream.engine/androidfs/acestream.engine/python/bin/python && \
-  dnf -y remove python3-devel && \
-  dnf -y group remove "C Development Tools and Libraries" && \
-  dnf -y autoremove && \
-  dnf clean packages && \
+   mkdir -p /opt/acestream.engine/ && \
+   wget -o - https://www.dropbox.com/s/wde2cc3hma9f94f/acestream_3.1.33_x86_webUI.tar.gz && \
+   tar -zxvf acestream_3.1.33_x86_webUI.tar.gz && \
+   mv acestream.engine/ /opt/ && \
+   find /opt/acestream.engine/androidfs/system -type d -exec chmod 755 {} \; && \
+   find /opt/acestream.engine/androidfs/system -type f -exec chmod 644 {} \; && \
+   chmod 755 /opt/acestream.engine/androidfs/system/bin/* /opt/acestream.engine/androidfs/acestream.engine/python/bin/python && \
+   dnf -y remove python3-devel && \
+   dnf -y group remove "C Development Tools and Libraries" && \
+   dnf -y autoremove && \
+   dnf clean packages && \
 
 # cleanup
    rm -rf \
