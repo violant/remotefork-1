@@ -21,7 +21,7 @@ RUN apt-get update -y && \
    wget -o - https://github.com/ShutovPS/RemoteFork/releases/download/v1.40.0.12/linux-x64.zip && \
    unzip linux-x64.zip && \
    mv linux-x64 app && \
-   rm -rf /app && \
+   rm -rf /app/wwwroot && \
    mv app/* /app && \
    wget -o - https://github.com/ShutovPS/RemoteFork.Plugins/releases/download/moonwalk.0.0.7/RemoteFork.Plugins.Moonwalk.dll && \
    wget -o - https://github.com/ShutovPS/RemoteFork.Plugins/releases/download/hdrezka.0.0.10/RemoteFork.Plugins.HDRezka.dll && \
