@@ -38,17 +38,17 @@ RUN apt-get update -y && \
    wget -o - https://github.com/ShutovPS/RemoteFork.Plugins/releases/download/stereotracker.0.1.0/RemoteFork.Plugins.AceStream.StereoTracker.dll && \
    mv *.dll /app/linux-x64/Plugins && \
    
- #acestream
- mkdir -p /opt/acestream.engine/ && \
- wget -o - https://www.dropbox.com/s/wde2cc3hma9f94f/acestream_3.1.33_x86_webUI.tar.gz && \
- tar -zxvf acestream_3.1.33_x86_webUI.tar.gz && \
- mv acestream.engine/ /opt/ && \
- find /opt/acestream.engine/androidfs/system -type d -exec chmod 755 {} \; && \
- find /opt/acestream.engine/androidfs/system -type f -exec chmod 644 {} \; && \
- chmod 755 /opt/acestream.engine/androidfs/system/bin/* /opt/acestream.engine/androidfs/acestream.engine/python/bin/python && \
+# acestream
+   mkdir -p /opt/acestream.engine/ && \
+   wget -o - https://www.dropbox.com/s/wde2cc3hma9f94f/acestream_3.1.33_x86_webUI.tar.gz && \
+   tar -zxvf acestream_3.1.33_x86_webUI.tar.gz && \
+   mv acestream.engine/ /opt/ && \
+   find /opt/acestream.engine/androidfs/system -type d -exec chmod 755 {} \; && \
+   find /opt/acestream.engine/androidfs/system -type f -exec chmod 644 {} \; && \
+   chmod 755 /opt/acestream.engine/androidfs/system/bin/* /opt/acestream.engine/androidfs/acestream.engine/python/bin/python && \
 
 # cleanup
- rm -rf \
+   rm -rf \
 	/tmp/* \
 	acestream_3.1.33_x86_webUI.tar.gz \ 
     RemoteFork.zip
