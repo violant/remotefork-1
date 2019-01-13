@@ -25,7 +25,7 @@ RUN apt-get update -y && \
    mv app/* /app && \
    wget -o - https://github.com/ShutovPS/RemoteFork.Plugins/releases/download/moonwalk.0.0.7/RemoteFork.Plugins.Moonwalk.dll && \
    wget -o - https://github.com/ShutovPS/RemoteFork.Plugins/releases/download/hdrezka.0.0.10/RemoteFork.Plugins.HDRezka.dll && \
-   wget -o - https://github.com/ShutovPS/RemoteFork.Plugins/releases/download/filmix.0.0.1/RemoteFork.Plugins.Filmix.dll && \
+   wget -o - https://github.com/ShutovPS/RemoteFork.Plugins/releases/download/filmix.0.0.3/RemoteFork.Plugins.Filmix.dll && \
    wget -o - https://github.com/ShutovPS/RemoteFork.Plugins/releases/download/kinosha.0.0.2/RemoteFork.Plugins.Kinosha.dll && \
    wget -o - https://github.com/ShutovPS/RemoteFork.Plugins/releases/download/sensfilm.0.0.3/RemoteFork.Plugins.SensFilm.dll && \
    wget -o - https://github.com/ShutovPS/RemoteFork.Plugins/releases/download/hdserials.0.0.4/RemoteFork.Plugins.HDSerials.dll && \
