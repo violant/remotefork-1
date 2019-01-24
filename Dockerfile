@@ -39,7 +39,7 @@ RUN apt-get update -y && \
    wget -o - https://github.com/ShutovPS/RemoteFork.Plugins/releases/download/rutor.0.1.0/RemoteFork.Plugins.AceStream.Rutor.dll && \
    wget -o - https://github.com/ShutovPS/RemoteFork.Plugins/releases/download/stereotracker.0.1.0/RemoteFork.Plugins.AceStream.StereoTracker.dll && \
    mv *.dll /app/Plugins && \
-   wget -o - https://www.dropbox.com/s/wde2cc3hma9f94f/acestream_3.1.33_x86_webUI.tar.gz && \
+   wget -o - https://www.dropbox.com/s/blydto9ztkxmf1z/acestream_3.1.33.1_x86_wbUI.tar.gz && \
    tar -zxvf acestream_3.1.33_x86_webUI.tar.gz && \
    mv acestream.engine/ /opt/ && \
    find /opt/acestream.engine/androidfs/system -type d -exec chmod 755 {} \; && \
