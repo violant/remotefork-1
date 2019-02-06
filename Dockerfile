@@ -1,57 +1,38 @@
-FROM coresystem/remotefork
+FROM ubuntu:18.10
 
-# Set correct environment variables
-ENV DEBIAN_FRONTEND=noninteractive
-WORKDIR /tmp
+# set ports
+EXPOSE 8621 62062 6878 8027
 
-# install base packages
-ENV DEBIAN_FRONTEND=noninteractive
-WORKDIR /tmp
+RUN \
+apt-get update && apt-get upgrade -y && \
+apt-get install -y \
+git \
+python3 \
+python-pip \
+python3.7-gevent \
+python3-psutil \
+mc \
+tar \
+unzip \
+htop \
+wget \
+nano && \
+apt-get autoremove -y && \
 
-RUN apt-get update -y && \
-    apt-get install -y apt-utils && \
-    apt-get install -y \
-    nano \
-    tzdata \
-    htop \
-    mc \
-    wget && \
-    
-# install acestream-engine
-   wget -o - https://github.com/ShutovPS/RemoteFork/releases/download/v1.40.0.12/linux-x64.zip && \
-   unzip linux-x64.zip && \
-   mv linux-x64 app && \
-   rm -rf /app/wwwroot && \
-   mv app/* /app && \
-   wget -o - https://github.com/ShutovPS/RemoteFork.Plugins/releases/download/moonwalk.0.0.7/RemoteFork.Plugins.Moonwalk.dll && \
-   wget -o - https://github.com/ShutovPS/RemoteFork.Plugins/releases/download/hdrezka.0.0.10/RemoteFork.Plugins.HDRezka.dll && \
-   wget -o - https://github.com/ShutovPS/RemoteFork.Plugins/releases/download/filmix.0.0.3/RemoteFork.Plugins.Filmix.dll && \
-   wget -o - https://github.com/ShutovPS/RemoteFork.Plugins/releases/download/kinosha.0.0.2/RemoteFork.Plugins.Kinosha.dll && \
-   wget -o - https://github.com/ShutovPS/RemoteFork.Plugins/releases/download/sensfilm.0.0.3/RemoteFork.Plugins.SensFilm.dll && \
-   wget -o - https://github.com/ShutovPS/RemoteFork.Plugins/releases/download/hdserials.0.0.4/RemoteFork.Plugins.HDSerials.dll && \
-   wget -o - https://github.com/ShutovPS/RemoteFork.Plugins/releases/download/seasonvar.0.4.8/RemoteFork.Plugins.Seasonvar.dll && \
-   wget -o - https://github.com/ShutovPS/RemoteFork.Plugins/releases/download/youtube.0.1.1/RemoteFork.Plugins.YouTube.dll && \
-   wget -o - https://github.com/ShutovPS/RemoteFork.Plugins/releases/download/thvp.0.1.1/RemoteFork.Plugins.Thvp.dll && \
-   wget -o - https://github.com/ShutovPS/RemoteFork.Plugins/releases/download/acestreamtv.0.1.3/RemoteFork.Plugins.AceStream.AceStreamTV.dll && \
-   wget -o - https://github.com/ShutovPS/RemoteFork.Plugins/releases/download/godzfilm.0.0.1/RemoteFork.Plugins.GodZfilm.dll && \
-   wget -o - https://github.com/ShutovPS/RemoteFork.Plugins/releases/download/rutracker.0.1.3/RemoteFork.Plugins.AceStream.Rutracker.dll && \
-   wget -o - https://github.com/ShutovPS/RemoteFork.Plugins/releases/download/nnmclub.0.1.3/RemoteFork.Plugins.AceStream.NnmClub.dll && \
-   wget -o - https://github.com/ShutovPS/RemoteFork.Plugins/releases/download/rutor.0.1.0/RemoteFork.Plugins.AceStream.Rutor.dll && \
-   wget -o - https://github.com/ShutovPS/RemoteFork.Plugins/releases/download/stereotracker.0.1.0/RemoteFork.Plugins.AceStream.StereoTracker.dll && \
-   mv *.dll /app/Plugins && \
-   wget -o - https://www.dropbox.com/s/blydto9ztkxmf1z/acestream_3.1.33.1_x86_wbUI.tar.gz && \
-   tar -zxvf acestream_3.1.33.1_x86_wbUI.tar.gz && \
-   mv acestream.engine/ /opt/ && \
-   find /opt/acestream.engine/androidfs/system -type d -exec chmod 755 {} \; && \
-   find /opt/acestream.engine/androidfs/system -type f -exec chmod 644 {} \; && \
-   chmod 755 /opt/acestream.engine/androidfs/system/bin/* /opt/acestream.engine/androidfs/acestream.engine/python/bin/python && \
-   rm -rf /tmp/* /opt/acestream/* /RunApp.sh
-   
-# add services
-ADD acestream.conf /opt/acestream.engine/androidfs/acestream.engine/acestream.conf
-ADD start.sh /usr/bin/start.sh
-RUN chmod +x /usr/bin/start.sh
+# install acestream
+wget -o - https://www.dropbox.com/s/blydto9ztkxmf1z/acestream_3.1.33.1_x86_wbUI.tar.gz && \
+tar -zxvf acestream_3.1.33.1_x86_wbUI.tar.gz && \
+mv acestream.engine/ /opt/ && \
+apt-get autoremove -y && \
 
-EXPOSE 8621 62062 6878 8027 9955
+# install remotefork
+wget -o - https://www.dropbox.com/s/5kf9pzzqm2c21vw/linux-x64.zip -O aceproxy.zip && \
+unzip aceproxy.zip -d /opt/ && \
 
-WORKDIR /
+# cleanup
+rm -rf acestream_3.1.33.1_x86_wbUI.tar.gz aceproxy.zip linux-x64.zip
+
+ADD start.sh /bash/start.sh
+RUN chmod +x /bash/start.sh
+
+CMD ["/bash/start.sh"]
