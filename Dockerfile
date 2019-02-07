@@ -23,14 +23,13 @@ apt-get autoremove -y && \
 wget -o - https://www.dropbox.com/s/blydto9ztkxmf1z/acestream_3.1.33.1_x86_wbUI.tar.gz && \
 tar -zxvf acestream_3.1.33.1_x86_wbUI.tar.gz && \
 mv acestream.engine/ /opt/ && \
-apt-get autoremove -y && \
 
 # install remotefork
-wget -o - https://www.dropbox.com/s/5kf9pzzqm2c21vw/linux-x64.zip -O aceproxy.zip && \
-unzip aceproxy.zip -d /opt/ && \
+wget -o - https://www.dropbox.com/s/5kf9pzzqm2c21vw/linux-x64.zip && \
+unzip linux-x64.zip -d /opt/ && \
 
 # cleanup
-rm -rf acestream_3.1.33.1_x86_wbUI.tar.gz aceproxy.zip linux-x64.zip
+rm -rf acestream_3.1.33.1_x86_wbUI.tar.gz linux-x64.zip
 
 ADD start.sh /bash/start.sh
 RUN chmod +x /bash/start.sh
