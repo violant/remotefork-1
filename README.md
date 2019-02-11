@@ -2,7 +2,7 @@
 
 # Установка
 
-`docker run --privileged -d -e PUID=0 -e PGID=0 --restart always --name=rem --net=host -e TZ=Europe/Helsinki tarmets/remotefork`
+`docker run --privileged -d -e PUID=0 -e PGID=0 --restart always --name=rem --net=host -e TZ=Europe/Moscow tarmets/remotefork`
 
 # чтобы зайти в настройки RemoteFork наберите
 `your_server_ip:8027`
