@@ -37,7 +37,7 @@ pip3 install --upgrade gevent && \
 # install acestream
 wget -o - https://www.dropbox.com/s/kz4ov7f0om260jp/acestream_3.1.35_ubuntu_18.04_x86_64.tar.gz && \
 tar -zxvf acestream_3.1.35_ubuntu_18.04_x86_64.tar.gz && \
-mv acestream.engine/ /opt/
+mv acestream.engine/ /opt/ && \
 
 # install remotefork
 wget -o - https://www.dropbox.com/s/5kf9pzzqm2c21vw/linux-x64.zip && \
