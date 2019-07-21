@@ -1,7 +1,7 @@
 FROM ubuntu:18.10
 
 # set ports
-EXPOSE 62062 6878 8027
+EXPOSE 62062 6878 8027 8621
 
 # update apt and install
 RUN \
