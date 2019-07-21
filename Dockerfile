@@ -35,16 +35,15 @@ pip3 install --upgrade psutil && \
 pip3 install --upgrade gevent && \
 
 # install acestream
-wget -o - https://www.dropbox.com/s/kz4ov7f0om260jp/acestream_3.1.35_ubuntu_18.04_x86_64.tar.gz && \
-tar -zxvf acestream_3.1.35_ubuntu_18.04_x86_64.tar.gz && \
-mv acestream.engine/ /opt/ && \
+wget -o - https://www.dropbox.com/s/6yh7tf1tr2t8is6/acestream_3.1.49_ubuntu_18.04_x86_64.zip && \
+unzip acestream_3.1.49_ubuntu_18.04_x86_64.zip -d /opt/ && \
 
 # install remotefork
 wget -o - https://www.dropbox.com/s/5kf9pzzqm2c21vw/linux-x64.zip && \
 unzip linux-x64.zip -d /opt/ && \
 
 # cleanup
-rm -rf acestream_3.1.35_ubuntu_18.04_x86_64.tar.gz linux-x64.zip
+rm -rf acestream_3.1.49_ubuntu_18.04_x86_64.zip linux-x64.zip
 
 # add local files
 ADD start.sh /bash/start.sh
