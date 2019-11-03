@@ -10,4 +10,4 @@
 `http://your_server_ip:8027`
 
 # Ace Stream Сервер Создать свой плейлист+Настройка
-`http://your_server_ip:6878/webui/app/WkRi4UeG8p/server?#proxy-server-playlist`
+`http://your_server_ip:6878/webui/app/password/server?#proxy-server-playlist`
