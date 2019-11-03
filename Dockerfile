@@ -44,6 +44,7 @@ RUN rm -rf acestream_3.1.49_ubuntu_18.04_x86_64.zip linux-x64.zip && \
 apt autoremove -y
 
 # add files
+ADD add/acestream.conf /opt/acestream.engine/acestream.conf
 ADD add/start.sh /bin/start.sh
 RUN chmod +x /bin/start.sh
 CMD ["/bin/start.sh"]
