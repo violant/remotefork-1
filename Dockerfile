@@ -12,7 +12,6 @@ RUN apt-get update && apt-get upgrade -y
 
 # install apt
 RUN apt-get install -y \
-python-setuptools \
 python-m2crypto \
 python-libxslt1 \
 python-apsw \
@@ -28,8 +27,8 @@ wget \
 mc
 
 # install acestream
-RUN wget -o - https://www.dropbox.com/s/6yh7tf1tr2t8is6/acestream_3.1.49_ubuntu_18.04_x86_64.zip && \
-unzip acestream_3.1.49_ubuntu_18.04_x86_64.zip -d /opt/
+RUN wget --no-check-certificate https://github.com/tarmets/httpaceproxy2/blob/master/add/acestream_3.1.49_ubuntu_18.04_x86_64.zip?raw=true && \
+unzip acestream_3.1.49_ubuntu_18.04_x86_64.zip?raw=true -d /opt/
 
 # install remotefork
 RUN wget -o - https://www.dropbox.com/s/5kf9pzzqm2c21vw/linux-x64.zip && \
@@ -39,7 +38,7 @@ unzip linux-x64.zip -d /opt/
 RUN (crontab -l ; echo "00 0-23/12 * * * apt-get update && apt-get upgrade -y && apt autoremove -y") | crontab
 
 # cleanup
-RUN rm -rf acestream_3.1.49_ubuntu_18.04_x86_64.zip linux-x64.zip && \
+RUN rm -rf acestream_3.1.49_ubuntu_18.04_x86_64.zip?raw=true linux-x64.zip && \
 apt autoremove -y
 
 # add files
