@@ -1,6 +1,6 @@
 #!/bin/bash
 
-/opt/acestream.engine/start-engine --client-console --bind-all --access-token WkRi4UeG8p --cache-dir /tmp/.ACEStream --state-dir /tmp/.ACEStream --live-cache-type memory --vod-cache-type memory --live-buffer 10 --vod-buffer 25 --vod-drop-max-age 120 >/dev/null 2>&1 &
+/opt/acestream.engine/start-engine --client-console @/opt/acestream.engine/acestream.conf >/dev/null 2>&1 &
 
 cd /opt/linux-x64/
 chmod +x RemoteForkCP
