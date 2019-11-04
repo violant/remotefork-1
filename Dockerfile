@@ -12,6 +12,7 @@ RUN apt-get update && apt-get upgrade -y
 
 # install apt
 RUN apt-get install -y \
+python-setuptools \
 python-m2crypto \
 python-libxslt1 \
 python-apsw \
