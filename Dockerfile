@@ -24,6 +24,7 @@ sudo \
 nano \
 tar \
 unzip \
+htop \
 wget \
 mc
 
